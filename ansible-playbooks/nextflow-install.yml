@@ -1,0 +1,14 @@
+- hosts: compute,controller
+  become: true
+  tasks:
+    - include_role:
+        name: nextflow
+- hosts: compute
+  become: true
+  tasks:
+    - name: Ensure /run/docker.sock is owned by root:ubuntu
+      ansible.builtin.file:
+        path: /run/docker.sock
+        owner: root
+        group: ubuntu
+        mode: '0777'

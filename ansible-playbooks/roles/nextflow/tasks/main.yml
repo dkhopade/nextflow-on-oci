@@ -1,0 +1,42 @@
+---
+- name: Install java-openjdk for nextflow
+  apt:
+    update_cache: yes
+    name: "{{ packages }}"
+    state: present
+  vars:
+    packages:
+      - openjdk-21-jdk
+  when: ansible_distribution == 'Ubuntu'
+
+- name: Download and install Nextflow
+  ansible.builtin.shell: curl -s https://get.nextflow.io | bash
+  args:
+    chdir: /usr/local/bin
+    creates: /usr/local/bin/nextflow
+
+- name: Change nexflow to executable mode
+  ansible.builtin.file:
+    path: /usr/local/bin/nextflow
+    mode: '0755'
+
+- name: Download Singularity-ce
+  ansible.builtin.get_url:
+    url: "https://github.com/sylabs/singularity/releases/download/v4.3.3/singularity-ce_4.3.3-jammy_amd64.deb"
+    dest: "/tmp/singularity-ce_4.3.3-jammy_amd64.deb"
+    mode: '0644'
+
+- name: Install singularity-ce for rootless nextflow
+  ansible.builtin.apt:
+    deb: '/tmp/singularity-ce_4.3.3-jammy_amd64.deb'
+    state: present
+
+- name: Verify Nextflow installation
+  ansible.builtin.command: nextflow -version
+  register: nextflow_version_output
+  changed_when: false
+  failed_when: nextflow_version_output.rc != 0
+
+- name: Display Nextflow version
+  ansible.builtin.debug:
+    var: nextflow_version_output.stdout
