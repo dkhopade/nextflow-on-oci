@@ -3,6 +3,8 @@
 [![Issues](https://img.shields.io/github/issues/your-username/your-repo-name)](https://github.com/your-username/your-repo-name/issues)
 [![Stars](https://img.shields.io/github/stars/your-username/your-repo-name)](https://github.com/your-username/your-repo-name/stargazers)
 
+![Oracle](Oracle_logo.png)
+
 This repo helps install nextflow on Oracle Cloud Infrastrucure (OCI) and help you run and manage nextflow pipelines using OCI's HPC Cluster with SLURM.
 
 ## Description
