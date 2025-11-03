@@ -1,0 +1,6 @@
+{
+    "inputFASTQ_1" : "/home/ubuntu/deepak-try/parabricks-nextflow/data/parabricks_sample/Data/sample_1.fq.gz",
+    "inputFASTQ_2" : "/home/ubuntu/deepak-try/parabricks-nextflow/data/parabricks_sample/Data/sample_2.fq.gz",
+    "inputRef" : "/home/ubuntu/deepak-try/parabricks-nextflow/data/parabricks_sample/Ref/Homo_sapiens_assembly38.fasta",
+    "inputKnownSitesVCF" : "/home/ubuntu/deepak-try/parabricks-nextflow/data/parabricks_sample/Ref/Homo_sapiens_assembly38.known_indels.vcf.gz"
+}

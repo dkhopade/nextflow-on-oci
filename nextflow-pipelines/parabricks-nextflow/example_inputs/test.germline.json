@@ -1,0 +1,6 @@
+{
+    "inputBAM" : "/home/ubuntu/deepak-try/parabricks-nextflow/data/parabricks_sample/Data/germline-data/sample_1.fq.pb.bam",
+    "inputBAI" : "/home/ubuntu/deepak-try/parabricks-nextflow/data/parabricks_sample/Data/germline-data/sample_1.fq.pb.bam.bai",
+    "inputBQSR" : "/home/ubuntu/deepak-try/parabricks-nextflow/data/parabricks_sample/Data/germline-data/sample_1.fq.pb.BQSR-REPORT.txt",
+    "inputRef" : "/home/ubuntu/deepak-try/parabricks-nextflow/data/parabricks_sample/Data/germline-data/Homo_sapiens_assembly38.fasta"
+}
